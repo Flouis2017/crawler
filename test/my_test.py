@@ -64,34 +64,52 @@ fh = open("C:/Users/Administrator/Desktop/temporary/Flouis/test.txt", "r")
 data = fh.read()
 print(data)
 fh.close()
+'''
 
+'''
 url = "D:/Crawler/temp/File.txt"
-# fileName = os.path.basename(url)
-# print(url[url.rindex("/")+1:len(url)])
+fileName = os.path.basename(url)
+print(fileName)
+print(url[url.rindex("/")+1:len(url)])
 dirPath = url[0:url.rindex("/")]
-# print( url )
+print(url)
+print(dirPath)
+'''
 
+'''
+# 文件写入
+url = "D:/Crawler/temp/File2.txt"
+dirPath = url[0:url.rindex("/")]
 flag = os.path.exists(dirPath)
 if flag == False:
     os.makedirs(dirPath)
 
-fh = open(url, "w")
-fh.write('<contents>')
+# fh = open(url, "w")
+fh = open(url, "a")
+fh.write("<contents>")
 fh.close()
+'''
 
+'''
+# 文件读取
+url = "D:/Crawler/temp/File.txt"
 fh = open(url, "r")
+# 常规读取
 # data = fh.read()
 # print(data)
 print("========================")
+# 按行读取
 while True:
     line = fh.readline()
     if len(line) == 0:
         break
     print(line)
-
 fh.close()
 '''
+
+
 # 异常处理(Exception handling)
+'''
 try:
     print("asdf")
     url = "C:/temp/asdfasdfasfd"
@@ -101,7 +119,7 @@ try:
 except Exception as e:
     print(e)
     print("hello!")
-
+'''
 
 
 
