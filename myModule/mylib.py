@@ -11,3 +11,4 @@ def print_mutiplication_table_():
         for j in range(i, 0, -1):
             print(str(i) + "*" + str(j) + "=" + str(i * j), end="\t")
         print()
+
