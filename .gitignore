@@ -1,19 +1,21 @@
 *.class
+
 # package file
 *.war
 *.ear
+
 # kdiff3 ignore
 *.orig
+
 # maven ignore
 target/
 
 # eclipse ignore
 .settings/
 .*project
-.classpatch
+.classpath
 
-
-# idea ingore
+# idea ignore
 .idea/
 /idea/
 *.ipr
@@ -25,8 +27,8 @@ target/
 *.cache
 *.diff
 *.patch
+*.path
 *.tmp
-
 
 # system ignore
 .DS_Store
