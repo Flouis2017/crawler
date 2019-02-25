@@ -25,10 +25,16 @@ import re
 # print(re.search(r"^[\x30-\x45]$", "2") is not None)
 
 
+# 例1-9 使用转义字符 匹配 元字符
+# print(re.search(r"[\-]", "214-10058741") is not None)
 
-
-
-
+# 例1-13 使用脱字符 ^ 进行反向匹配
+# 匹配一个0、1、2之外的字符
+# print(re.search(r"^[^012]$", "^") is not None)
+# 匹配四个字符0、^、1、2
+# print(re.search(r"^[0^12]$", "^") is not None)
+# ^紧跟在[之后但是使用转义
+# print(re.search(r"^[\^012]$", "^") is not None)
 
 
 
