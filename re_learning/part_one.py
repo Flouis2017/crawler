@@ -22,8 +22,10 @@ import re
 # 例1-5 [0-9]是合法的，[9-0]会报错
 # print(re.search(r"^[0-9]$", "2") is not None)
 # print(re.search(r"^[9-0]$", "2") is not None)
+# 测试 \u 和 \x 转移序列匹配
 # print(re.search(r"^[\x30-\x45]$", "2") is not None)
-
+# print(re.search(r"[\u5B66][\u0031]", "qwer学123") is not None)
+# print(re.search(r"[\u5B66][\x31]", "qwer学123") is not None)
 
 # 例1-9 使用转义字符 匹配 元字符
 # print(re.search(r"[\-]", "214-10058741") is not None)
