@@ -30,7 +30,7 @@ import re
 # 例1-9 使用转义字符 匹配 元字符
 # print(re.search(r"[\-]", "214-10058741") is not None)
 
-# 例1-13 使用脱字符 ^ 进行反向匹配
+# 例1-13 使用脱字符 ^ 进行互补匹配
 # 匹配一个0、1、2之外的字符
 # print(re.search(r"^[^012]$", "^") is not None)
 # 匹配四个字符0、^、1、2
@@ -38,5 +38,26 @@ import re
 # ^紧跟在[之后但是使用转义
 # print(re.search(r"^[\^012]$", "^") is not None)
 
+
+# 例1-17 字符组简记法\d \w \s
+# print(re.search(r"\d", "Beijing 2008 Olympic") is not None)
+# print(re.search(r"\d", "Beijing Olympic") is not None)
+# print()
+# print(re.search(r"\w", "%$#@!+") is not None)
+# print(re.search(r"\w", "%$#_@!+") is not None)
+# print(re.search(r"\w", "Beijing 2008 Olympic") is not None)
+# print()
+# print(re.search(r"\s", "Beijing2008Olympic") is not None)
+# print(re.search(r"\s", "Beijing 2008 Olympic") is not None)
+# print(re.search(r"\s", "\t") is not None)
+# print(re.search(r"\s", "\r") is not None)
+# print(re.search(r"\s", "\n") is not None)
+# print(re.search(r"\s", "\v") is not None)
+# print(re.search(r"\s", "\f") is not None)
+
+# 测试 \r(Carriage Return) & \n(Line Feed)
+# print("Beijing\r2008 Olympic")
+# print("Beijing\n2008 Olympic")
+# print("Beijing\r\n2008 Olympic")
 
 
