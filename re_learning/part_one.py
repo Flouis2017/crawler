@@ -60,4 +60,33 @@ import re
 # print("Beijing\n2008 Olympic")
 # print("Beijing\r\n2008 Olympic")
 
+# 例2-3 长度限定符：{m,n} {0,n} {n,} *({0,}) +({1,}) ?({0,1})
+print(re.search(r"^\d{4,6}$", "123") is not None)
+print(re.search(r"^\d{4,6}$", "1234") is not None)
+print(re.search(r"^\d{4,6}$", "123456") is not None)
+print(re.search(r"^\d{4,6}$", "1234567") is not None)
+print()
+print(re.search(r"^\d{4,}$", "123") is not None)
+print(re.search(r"^\d{4,}$", "1234") is not None)
+print(re.search(r"^\d{4,}$", "1234567") is not None)
+print()
+print(re.search(r"^\d{0,6}$", "") is not None)
+print(re.search(r"^\d{0,6}$", "123") is not None)
+print(re.search(r"^\d{0,6}$", "1234567") is not None)
+print()
 
+# 例2-4 长度限定符?的应用
+print(re.search(r"^colou?r$", "color") is not None, end=", This is American English\n")
+print(re.search(r"^colou?r$", "colour") is not None, end=", This is British English\n")
+print()
+
+# 例2-5 长度限定符+的应用
+print(re.search(r"^<[^>]+>$", "<div>") is not None)
+print(re.search(r"^<[^>]+>$", "</div>") is not None)
+print(re.search(r"^<[^>]+>$", "<>") is not None)
+print()
+
+# 例2-5 长度限定符*的应用
+print(re.search(r"^<[^>]*>$", "<div>") is not None)
+print(re.search(r"^<[^>]*>$", "</div>") is not None)
+print(re.search(r"^<[^>]*>$", "<>") is not None)
