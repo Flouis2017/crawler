@@ -135,5 +135,23 @@ import re
 # print("file dir: " + re.search(r"^.*\\", windows_url).group(0))
 # print("file name: " + re.search(r"[^\\]*$", windows_url).group(0))
 
+# 例3-4 使用分组符(括号)改变量词(长度限定符)的作用元素
+# print(re.search(r"^ab+$", "ab") is not None)        # True
+# print(re.search(r"^ab+$", "abb") is not None)       # True
+# print(re.search(r"^ab+$", "abab") is not None)      # False
+# print()
+# print(re.search(r"^(ab)+$", "ab") is not None)      # True
+# print(re.search(r"^(ab)+$", "abb") is not None)     # False
+# print(re.search(r"^(ab)+$", "abab") is not None)    # True
+
+# 例3-5 使用分组符精确匹配open tag
+# open_tag_regex = r"^<[^/]([^>]*[^/])?>$"
+# print(re.search(open_tag_regex, "<u>") is not None)
+# print(re.search(open_tag_regex, "<tr>") is not None)
+# print(re.search(open_tag_regex, "<table>") is not None)
+# print(re.search(open_tag_regex, "<input >") is not None)
+# print(re.search(open_tag_regex, "<input />") is not None)
+# print(re.search(open_tag_regex, "</u>") is not None)
+
 
 
