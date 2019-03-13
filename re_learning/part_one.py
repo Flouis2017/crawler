@@ -153,5 +153,21 @@ import re
 # print(re.search(open_tag_regex, "<input />") is not None)
 # print(re.search(open_tag_regex, "</u>") is not None)
 
+# 例3-8 完整匹配电子邮箱地址的正则表达式
+# email_regex = r"^[-.\w]{1,64}@([0-9a-zA-Z-]{1,63}\.)*[0-9a-zA-Z-]{1,63}$"
+# print(re.search(email_regex, "Louis.Fan@qq.com") is not None)
+# print(re.search(email_regex, "Flouis@mail.google.com") is not None)
+# print(re.search(email_regex, "Flouis@.somewhere.host.com") is not None)
+
+# 例3-10 使用多选结构匹配时分秒（HH:mm:ss）
+# time_regex = r"^([01]\d|2[0-4]):[0-5]\d:[0-5]\d$"
+# print(re.search(time_regex, "00:00:00") is not None)
+# print(re.search(time_regex, "09:50:03") is not None)
+# print(re.search(time_regex, "25:00:09") is not None)
+
+# 使用多选结构匹配日期时间（yyyy-MM-dd HH:mm:ss）
+# datetime_regex = r"^[12]\d{3}-(0[1-9]|1[012])-(0[1-9]|[12]\d|3[01]) ([01]\d|2[0-4]):[0-5]\d:[0-5]\d$"
+# print(re.search(datetime_regex, "2019-03-13 22:34:56") is not None)
+# print(re.search(datetime_regex, "2019-00-13 22:34:56") is not None)
 
 
