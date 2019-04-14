@@ -170,4 +170,11 @@ import re
 # print(re.search(datetime_regex, "2019-03-13 22:34:56") is not None)
 # print(re.search(datetime_regex, "2019-00-13 22:34:56") is not None)
 
+# 准确匹配HTML标签，如：<input id="input_data", value="1" attr_data=">" >
+tag_regex = r"^</?('[^']*'|\"[^\"]*\"|[^'\">])+/?>$"
+print(re.search(tag_regex, "<input id=\"input_data\", value=\"1\" attr_data=\">\" >") is not None)
+print(re.search(tag_regex, "<i>") is not None)
+print(re.search(tag_regex, "</div>") is not None)
+print(re.search(tag_regex, "<br/>") is not None)
+
 
