@@ -170,11 +170,19 @@ import re
 # print(re.search(datetime_regex, "2019-03-13 22:34:56") is not None)
 # print(re.search(datetime_regex, "2019-00-13 22:34:56") is not None)
 
-# 准确匹配HTML标签，如：<input id="input_data", value="1" attr_data=">" >
-tag_regex = r"^</?('[^']*'|\"[^\"]*\"|[^'\">])+/?>$"
-print(re.search(tag_regex, "<input id=\"input_data\", value=\"1\" attr_data=\">\" >") is not None)
-print(re.search(tag_regex, "<i>") is not None)
-print(re.search(tag_regex, "</div>") is not None)
-print(re.search(tag_regex, "<br/>") is not None)
+# 例3-11 准确匹配HTML标签，如：<input id="input_data", value="1" attr_data=">" >
+# tag_regex = r"^</?('[^']*'|\"[^\"]*\"|[^'\">])+/?>$"
+# print(re.search(tag_regex, "<input id=\"input_data\", value=\"1\" attr_data=\">\" >") is not None)
+# print(re.search(tag_regex, "<i>") is not None)
+# print(re.search(tag_regex, "</div>") is not None)
+# print(re.search(tag_regex, "<br/>") is not None)
 
+# 匹配sql中字段别名：
+regex = r"AS [\w]+|aS [\w]+|As [\w]+|as [\w]+"
+sqlstr = "SELECT au.id AS user_id, au.username aS username, r.name As role_name, r.auth_set as auth_set FROM admin_user au INNER JOIN role r ON au.role_id = r.id where au.id = :user_id"
+res = re.findall(regex, sqlstr)
+print(res)
+for i in range(0, len(res)):
+	res[i] = res[i][3:]
+print(res)
 
