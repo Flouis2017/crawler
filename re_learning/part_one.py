@@ -178,17 +178,20 @@ import re
 # print(re.search(tag_regex, "<br/>") is not None)
 
 # 匹配sql中字段别名：
-# regex = r"AS [\w]+|aS [\w]+|As [\w]+|as [\w]+"
-# sql_str = "SELECT au.id AS user_id, au.username aS username, r.name As role_name, r.auth_set as auth_set FROM admin_user au INNER JOIN role r ON au.role_id = r.id where au.id = :user_id"
+# regex = r"AS\s+[\w]+|aS\s+[\w]+|As\s+[\w]+|as\s+[\w]+"
+# sql_str = "SELECT au.id AS	user_id, au.username aS " \
+# 		  "username, r.name As  role_name, r.auth_set as auth_set " \
+# 		  "FROM admin_user au INNER JOIN role r ON au.role_id = r.id " \
+# 		  "where au.id = :user_id"
 # res = re.findall(regex, sql_str)	# findall出来的是list[]
 # print(res)
 # for i in range(0, len(res)):
-# 	res[i] = res[i][3:]
+# 	res[i] = res[i][3:].strip()
 # print(res)
 
 # 例3-19 引用分组应用：用分组提取出超链接的详细信息：
-regex = r"<a\s+href=\s*[\"']?([^\"'\s]+)[\"']?\s*>([^<]+)</a>"
-str = '<a href="https://www.google.com"> Google </a>'
-res = re.findall(regex, str)	# findall出来的是tuple_list，即[(,)]
-for items in res:
-	print("url:", items[0], "\ntext:", items[1].strip())
+# regex = r"<a\s+href=\s*[\"']?([^\"'\s]+)[\"']?\s*>([^<]+)</a>"
+# str = '<a href="https://www.google.com"> Google </a>'
+# res = re.findall(regex, str)	# findall出来的是tuple_list，即[(,)]
+# for items in res:
+# 	print("url:", items[0], "\ntext:", items[1].strip())
