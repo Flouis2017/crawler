@@ -195,3 +195,18 @@ import re
 # res = re.findall(regex, str)	# findall出来的是tuple_list，即[(,)]
 # for items in res:
 # 	print("url:", items[0], "\ntext:", items[1].strip())
+
+# 20190805: 回顾^……$用法
+# reg = r"\d+"		# 不加^$，\d+ 表示匹配任意个长度>=1的数字字符串（数字字符串是由纯数字组成的字符串，但凡出现一个非数字字符即认定为非数字字符串）
+# test_str = "123 4 56"
+# print(re.search(reg, test_str) is not None)		# True
+# print(re.findall(reg, test_str))				# ['123', '4', '56']
+# reg = r"^\d+"		# 只加^，\d+ 表示匹配一个以长度>=1开始的数字字符串
+# print(re.search(reg, test_str) is not None)		# True
+# print(re.findall(reg, test_str))				# ['123']
+# reg = r"\d+$"		# 只加$，\d+ 表示匹配一个以长度>=1结束的数字字符串
+# print(re.search(reg, test_str) is not None)		# True
+# print(re.findall(reg, test_str))				# ['56']
+# reg = r"^\d+$"		# 加^$，\d+ 表示匹配一个以长度>=1开始并以长度>=1结束的数字字符串
+# print(re.search(reg, test_str) is not None)		# False
+# print(re.findall(reg, test_str))				# []
