@@ -1,20 +1,10 @@
-
-*.pyc
-
-# package file
-*.war
-*.ear
-
-# kdiff3 ignore
-*.orig
-
-# maven ignore
-target/
-
-# eclipse ignore
-.settings/
-.*project
-.classpath
+# Python ignore
+venv/
+/venv/
+*.py[cod]
+*.so
+*.egg
+*.egg-info
 
 # idea ignore
 .idea/
@@ -22,6 +12,11 @@ target/
 *.ipr
 *.iml
 *.iws
+
+# eclipse ignore
+.settings/
+.*project
+.classpath
 
 # temp file
 *.log
@@ -34,3 +29,8 @@ target/
 # system ignore
 .DS_Store
 Thumbs.db
+
+# Windows ignore
+Thumbs.db
+ehthumbs.db
+Desktop.ini
