@@ -1,6 +1,4 @@
 # Python ignore
-venv/
-/venv/
 *.py[cod]
 *.so
 *.egg
@@ -9,22 +7,11 @@ venv/
 # idea ignore
 .idea/
 /idea/
-*.ipr
-*.iml
-*.iws
 
 # eclipse ignore
-.settings/
-.*project
 .classpath
-
-# temp file
-*.log
-*.cache
-*.diff
-*.patch
-*.path
-*.tmp
+.settings
+.project
 
 # system ignore
 .DS_Store
